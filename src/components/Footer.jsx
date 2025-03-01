@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Global.css"
-import './App.css'
+
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
             {/* Logo & Newsletter */}
             <div className="col-md-4">
               <h3 className="text-white">
-                <img src="public/img/Logo (2).png" alt="" srcset="" />
+                <img src="public/img/Logo (2).png" alt="" srcSet="" />
               </h3>
 
               <p className=" mt-3">
@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="col-md-2">
+            <div className="col-md-2 my-3">
               <h5 className="text-white">QUICK LINKS</h5>
               <ul className="list-unstyled text-white lh-lg">
                 <li>Quick Links</li>
@@ -31,9 +31,9 @@ const Footer = () => {
                 <li>Quick Links</li>
               </ul>
             </div>
-
+              
             {/* Our Services */}
-            <div className="col-md-3">
+            <div className="col-md-3 my-3">
               <h5 className="text-white">OUR SERVICES</h5>
               <ul className="list-unstyled  text-white lh-lg">
                 <li>Web Development</li>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
 
             {/* Contact Us */}
-            <div className="col-md-3">
+            <div className="col-md-3 my-3">
               <h5 className="text-white">CONTACT US</h5>
               <p className="text-white ">
                 <strong style={{ color: "#28C0E7" }}>Address:</strong> 207A Radhika Premier, Tulsi Nagar, Indore, India

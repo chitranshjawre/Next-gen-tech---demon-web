@@ -19,9 +19,12 @@ h3 {
     padding-right: 23.08px;
 }
 
-.nav-item :active {
-    color: #28C0E7;
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: #28C0E7; /* Change color on hover, focus, or when active */
 }
+
 
 /* Buttons */
 .btn1 {
@@ -66,9 +69,12 @@ h3 {
     border: none;
 }
 
-/* Headings */
-.heading1 {
-    font-size: 7rem;
+ /* Headings */
+ .heading1 {
+    font-size: clamp(2rem, 10vw, 7rem);
+}
+.heading2 {
+    font-size: clamp(2rem, 7vw, 4rem);
 }
 
 .heading {
@@ -76,11 +82,12 @@ h3 {
     height: 95;
     top: 44.2px;
     left: 244.25px;
-}
+} 
 
 /* Cards */
 .card {
     overflow: hidden;
+    
 }
 
 .card h1 {
@@ -97,11 +104,50 @@ h3 {
 
 .card p {
     font-family: Poppins;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.4px;
 }
+/* Slider container */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 0; /* Ensure no top/bottom cutoff */
+}
+
+.slider-wrapper {
+    width: 100%;
+    max-width: 1100px; /* Keep the cards centered */
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease-in-out;
+    width: max-content;
+    align-items: center; /* Center cards vertically */
+}
+
+/* Cards */
+.card2 {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    min-height: 250px; /* Ensures full visibility */
+    margin: 0 auto; /* Centers the cards */
+}
+
+
+
 
 /* Service Box */
 .service-box1 {
@@ -139,47 +185,48 @@ h3 {
 }
 
 /* Logo Animation */
-.logo-container {
-    display: flex;
-    gap: 40px;
-    white-space: nowrap;
+.company-section {
+    text-align: center;
     overflow: hidden;
-    animation: slideLogos 10s linear infinite;
-}
-
-.logo-box {
+    padding: 20px 0;
+  }
+  
+  .logo-slider {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logo-track {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.logo-box img {
-    width: 200px;
+    animation: slideLogos 10s linear infinite;
+    width: calc(200%); /* Double width to avoid gap */
+  }
+  
+  .logo-box {
+    flex: 0 0 auto;
+    width: 150px; /* Adjust logo size */
+    margin: 0 20px; /* Maintain consistent spacing */
+  }
+  
+  .logo-box img {
+    width: 100%;
     height: auto;
-    object-fit: contain;
-}
-
-.logo-box span {
-    color: white;
-    font-size: 1.2rem;
-}
-
-/* Animation Keyframes */
-@keyframes slideLogos {
+  }
+  
+  /* Keyframes for Infinite Sliding */
+  @keyframes slideLogos {
     from {
-        transform: translateX(100%);
+      transform: translateX(-50);
     }
-
     to {
-        transform: translateX(-100%);
+      transform: translateX(-50%); /* Moves by half, looping seamlessly */
     }
-}
-
+  }
+  
 /* Zoom Effect */
 .zoom-effect {
-    overflow: hidden;
     display: inline-block;
     border-radius: none;
 }
@@ -191,3 +238,4 @@ h3 {
 .zoom-effect:hover img {
     transform: scale(1.1);
 }
+

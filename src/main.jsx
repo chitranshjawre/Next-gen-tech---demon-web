@@ -4,9 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import Next from './Next.jsx'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    {/* <Next/> */}
   </StrictMode>,
 )
