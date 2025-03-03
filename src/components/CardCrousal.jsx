@@ -51,7 +51,7 @@ function CardCarousel() {
         <Slider {...settings}>
           {cards.map((card) => (
             <div key={card.id} className="px-1">
-              <div className="card border-0 shadow rounded-4 p-4 w-100 h-100">
+              <div className="card border shadow rounded-4 p-4 w-100 h-100">
                 <div className="d-flex align-items-center justify-content-between w-100">
                   {/* Profile Image */}
                   <img
