@@ -37,12 +37,12 @@ const FormWithAcord = () => {
             {/* Image */}
             <div className="mt-3">
               <img
-                src="public/img/more FAQ.png"
+                src="/img/more FAQ.png"
                 alt="More FAQ"
                 className="img-fluid"
                 style={{ maxWidth: "100%", height: "auto" }}
               />
-              <img src="public/img/arrow-return-right.svg" alt="" srcSet="" className=' bg-light-subtle' />
+              <img src="/img/arrow-return-right.svg" alt="" srcSet="" className=' bg-light-subtle' />
             </div>
           </div>
 

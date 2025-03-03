@@ -26,7 +26,7 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                     <div className=" Glimpse-1 image-container">
-                                        <img src="public/img/Digital.png" className="img-fluid" alt="Digital Products" />
+                                        <img src="/img/Digital.png" className="img-fluid" alt="Digital Products" />
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ const OurServices = () => {
                                         </p>
                                     </div>
                                     <div className="  image-container">
-                                        <img src="public/img/uiux.png" className="img-fluid " alt="Digital Products" />
+                                        <img src="/img/uiux.png" className="img-fluid " alt="Digital Products" />
                                     </div>
                                 </div>
                             </div>

@@ -10,10 +10,10 @@ function CardCarousel() {
     infinite: true,
     speed: 600,
     autoplay: true,
-    autoplaySpeed: 1500, // Moves every 1.5 sec
-    slidesToShow: 3, // Show 3 cards at a time
-    slidesToScroll: 1, // Move 1 card at a time
-    arrows: false, // Hide arrows for a clean look
+    autoplaySpeed: 1500, 
+    slidesToShow: 3, 
+    slidesToScroll: 1, 
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,

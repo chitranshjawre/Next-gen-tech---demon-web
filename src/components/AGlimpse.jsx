@@ -16,14 +16,14 @@ const AGlimpse = () => {
                     <div className="project row d-flex justify-content-center" >
 
                         <div className="zoom-effect col-12   col-md-4 mb-4 d-flex justify-content-center" >
-                            <img src="public/img/project section.png" className="img-fluid"
+                            <img src="/img/project section.png" className="img-fluid"
                                 alt="Project" />
                         </div>
                         <div className="zoom-effect col-12 col-md-4 mb-4 d-flex justify-content-center">
-                            <img src="public/img/project section.png" className="img-fluid" alt="Project" />
+                            <img src="/img/project section.png" className="img-fluid" alt="Project" />
                         </div>
                         <div className="zoom-effect col-12 col-md-4 mb-4 d-flex justify-content-center">
-                            <img src="public/img/project section.png" className="img-fluid" alt="Project" />
+                            <img src="/img/project section.png" className="img-fluid" alt="Project" />
                         </div>
                     </div>
                 </div>
