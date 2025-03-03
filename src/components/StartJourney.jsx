@@ -1,6 +1,8 @@
 import React from 'react'
 
 const StartJourney = () => {
+
+
     return (
         <>
             <section className='mt-5' style={{ backgroundColor: "#28C0E7" }}>
@@ -9,12 +11,12 @@ const StartJourney = () => {
 
                         {/* Right Section (Text & Button) - Shows first on all screens */}
                         <div
-                            className="col-12 col-md-6"
+                            className=" startimage  col-12 col-md-6"
                             style={{
                                 backgroundImage: `url(/img/circle.png)`, // Corrected path
                                 backgroundSize: "cover", // Ensures the image covers the area
                                 backgroundPosition: "center", // Centers the image
-                                padding: "80px",
+                                
                             }}
                         >
                             <h1 className="fw-bold" style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}>
@@ -29,7 +31,7 @@ const StartJourney = () => {
                                 Use this section to describe your company and the products you offer. <br />
                                 You could share your company’s story and details about why you are in <br /> business.
                             </p>
-                            <button type="button" className="btn3 rounded-4 border-0 text-white px-5 py-3">
+                            <button type="button" className="btn3 rounded-4 border-0 text-white px-5 py-3" style={{marginBottom:"20px"}}>
                                 Let's Talk
                             </button>
                         </div>

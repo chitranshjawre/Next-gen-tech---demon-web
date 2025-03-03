@@ -1,166 +1,90 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Carousel = () => {
+function CardCarousel() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 1500, // Moves every 1.5 sec
+    slidesToShow: 3, // Show 3 cards at a time
+    slidesToScroll: 1, // Move 1 card at a time
+    arrows: false, // Hide arrows for a clean look
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 750,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
+
   const cards = [
-    { id: 1, name: "Charles Patterson", img: "./img/victor-1.png" },
-    { id: 2, name: "Mike Johnson", img: "./img/mike.png" },
-    { id: 3, name: "Jasmin Doe", img: "./img/jasmin.png" },
-    { id: 4, name: "Alex Smith", img: "./img/victor-1.png" },
-    { id: 5, name: "Sarah Brown", img: "./img/mike.png" },
-    { id: 6, name: "Daniel White", img: "./img/jasmin.png" },
+    { id: 1, name: "Charles Patterson", img: "/img/victor-1.png" },
+    { id: 2, name: "Mike Johnson", img: "/img/mike.png" },
+    { id: 3, name: "Jasmin Doe", img: "/img/jasmin.png" },
+    { id: 4, name: "Alex Smith", img: "/img/victor-1.png" },
+    { id: 5, name: "Sarah Brown", img: "/img/mike.png" },
+    { id: 6, name: "Daniel White", img: "/img/jasmin.png" },
   ];
 
-  const trackRef = useRef(null);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [index, setIndex] = useState(0);
-
-  // Detect screen size
-  useEffect(() => {
-    const updateScreenSize = () => setIsSmallScreen(window.innerWidth < 768);
-    updateScreenSize(); // Initialize on mount
-    window.addEventListener("resize", updateScreenSize);
-    return () => window.removeEventListener("resize", updateScreenSize);
-  }, []);
-
-  // Auto-scroll effect for large screens
-  useEffect(() => {
-    if (isSmallScreen || !trackRef.current) return;
-
-    let scrollAmount = 2;
-    let scrollInterval;
-
-    const startScrolling = () => {
-      scrollInterval = setInterval(() => {
-        if (trackRef.current) {
-          trackRef.current.scrollLeft += scrollAmount;
-          if (trackRef.current.scrollLeft >= trackRef.current.scrollWidth / 2) {
-            trackRef.current.scrollLeft = 0; // Reset scroll
-          }
-        }
-      }, 10);
-    };
-
-    if (!isPaused) startScrolling();
-    return () => clearInterval(scrollInterval);
-  }, [isPaused, isSmallScreen]);
-
-  // Auto-slide effect for small screens
-  useEffect(() => {
-    if (!isSmallScreen) return;
-
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [isSmallScreen]);
-
   return (
-    <section className="container-fluid text-center mt-5 position-relative">
-
-      <div className="container align-items-center ">
-        <h2 className=" ">What Our Clients Says</h2>
-        <p>Create custom landing pages with Omega that convert more visitors than any website. With lots of <br />
-        unique blocks, you can easily build a page without coding.</p>
+    <div className="container-fluid mt-4">
+      {/* Heading Section */}
+      <div className="text-center mb-5 px-3">
+        <h2 className="fw-bold">What Our Clients Say</h2>
+        <p className="text-muted">
+          Create custom landing pages with Omega that convert more visitors than any website. 
+          With lots of unique blocks, you can easily build a page without coding.
+        </p>
       </div>
 
-      
-      {/* Linear Carousel for Large Screens */}
-      {!isSmallScreen && (
-        <div
-          className="carousel-container mt-5 position-relative overflow-hidden"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          style={{ display: "flex", justifyContent: "center", width: "100%" }}
-        >
-          <div
-            ref={trackRef}
-            className="d-flex"
-            style={{
-              overflowX: "hidden",
-              whiteSpace: "nowrap",
-              width: "100%",
-              maskImage: "linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.1))",
-            }}
-          >
-            {[...cards, ...cards].map((card, index) => (
-              <div
-                key={index}
-                className="card border-2 p-4 rounded-5 shadow mx-3"
-                style={{ minWidth: "300px", flexShrink: 0, textAlign: "center" }}
-              >
-                <div className="d-flex justify-content-between align-items-center">
+      {/* Slider Section */}
+      <div className="px-md-4 px-2 overflow-hidden">
+        <Slider {...settings}>
+          {cards.map((card) => (
+            <div key={card.id} className="px-1">
+              <div className="card border-0 shadow rounded-4 p-4 w-100 h-100">
+                <div className="d-flex align-items-center justify-content-between w-100">
+                  {/* Profile Image */}
                   <img
                     src={card.img}
-                    alt="User"
-                    className="rounded-circle mb-3"
-                    width="60"
-                    height="60"
+                    alt={card.name}
+                    className="rounded-circle"
+                    width="80"
+                    height="80"
                   />
-                  <div>
-                    <h6 className="fw-semibold fs-5">{card.name}</h6>
-                    <p className="text-muted fs-6">One Year With Us</p>
+
+                  {/* Name & Info */}
+                  <div className="text-start flex-grow-1 ms-3">
+                    <h5 className="fw-bold mb-1">{card.name}</h5>
+                    <p className="text-muted mb-0">One Year With Us</p>
                   </div>
-                  <img src="./img/Vector.png" alt="icon" />
+
+                  {/* Icon */}
+                  <img src="/img/Vector.png" alt="icon" width="30" height="30" />
                 </div>
-                <p className="mt-3 text-muted" style={{ lineHeight: "1.6", fontSize: "16px" }}>
-                  consetetur sadipscing elitr, sed diam <br />
-                  nonumy eirmod tempor invidunt ut <br />
-                  labore et dolore magna aliquyam <br />
-                  erat, sed diam voluptua. <br />
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
-      {/* Non-Linear Carousel for Small Screens */}
-      {isSmallScreen && (
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ position: "relative", height: "300px" }}
-        >
-          {cards.map((card, i) => {
-            const scale = i === index ? 1.2 : 0.8;
-            const opacity = i === index ? 1 : 0.6;
-            return (
-              <div
-                key={card.id}
-                className="position-absolute shadow rounded-4 p-3"
-                style={{
-                  transform: `translateX(${(i - index) * 250}px) scale(${scale})`,
-                  transition: "all 0.5s ease-in-out",
-                  opacity,
-                  width: "220px",
-                  background: "white",
-                  zIndex: i === index ? 10 : 1,
-                }}
-              >
-                <img
-                  src={card.img}
-                  alt="User"
-                  className="rounded-circle mb-3"
-                  width="60"
-                  height="60"
-                />
-                <h6 className="fw-semibold fs-5">{card.name}</h6>
-                <p className="fs-6">One Year With Us</p>
-                <p style={{ textAlign: "center", fontSize: "14px", marginTop: "10px" }}>
-                consetetur sadipscing elitr, sed diam <br />
-                  nonumy eirmod tempor invidunt ut <br />
-                  labore et dolore magna aliquyam <br />
-                  erat, sed diam voluptua. <br />
+                {/* Card Description */}
+                <p className="text-start mt-3 text-muted">
+                  Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                  invidunt ut labore et dolore magna aliquyam erat, sed diam
+                  voluptua.
                 </p>
               </div>
-            );
-          })}
-        </div>
-      )}
-    </section>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </div>
   );
-};
+}
 
-export default Carousel;
+export default CardCarousel;

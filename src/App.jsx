@@ -14,7 +14,8 @@ import FullSetGreat from './components/FullSetGreat';
 import CardCrousal from './components/CardCrousal';
 import StartJourney from './components/StartJourney';
 import FormWithAcord from './components/FormWithAcord';
-import Next from './components/Next'
+
+
 
 
 
@@ -34,7 +35,8 @@ function App() {
      <StartJourney/>
      <FormWithAcord/>           
      <Footer/>
-    {/* <Next/> */}
+  
+  
     
     </>
   )

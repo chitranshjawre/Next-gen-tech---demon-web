@@ -3,17 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Global.css"
 
-import { motion } from "framer-motion";
-import OurServices from './OurServices';
-import ItDigital from './ItDigital';
-import AGlimpse from './AGlimpse';
-import CardCrousal from './CardCrousal';
-import StartJourney from './StartJourney';
-
 const Hero = () => {
     return (
         <>
-            <section className=" " style={{ marginTop: "10rem" }}>
+            <section className=" heromain" style={{ marginTop: "6rem" }}>
                 <div className="container  d-flex flex-column  flex-md-row justify-content-center align-items-center overflow-hidden position-relative text-center">
 
                     {/* Left Floating Polygon Image */}
@@ -44,7 +37,7 @@ const Hero = () => {
                             passion for creative problem solving — which is what we deliver.
                         </p>
 
-                        <button type="button" className=" btn2 text-white rounded-lg mt-3  py-4">
+                        <button type="button" className=" btn2 text-white text-sm-center  rounded-lg mt-3  ">
                             Get in Touch
                         </button>
 

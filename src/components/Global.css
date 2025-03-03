@@ -44,17 +44,34 @@ p {
 
 .btn2 {
     background: #28C0E7;
-    width: 257.57354736328125;
-    height: 70.52452087402344;
-    padding-top: 23.26px;
-    padding-right: 69.79px;
-    padding-bottom: 23.26px;
-    padding-left: 69.79px;
+    width: 258px;
+    height: 71px;
+    padding: 23px 70px; /* Default for large screens */
     border: none;
-    top: 407.09px;
-    left: 520.81px;
-    border-radius: 23.26px;
+    border-radius: 23px;
 }
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+    .btn2 {
+        width: 200px;
+        height: 60px;
+        padding: 30px;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+    .btn2 {
+        width: 150px;
+        height: auto;
+        padding: 20px;
+       
+       
+    }
+}
+
+
 
 .btn-info3 {
     width: 225.20254516601562;
@@ -113,61 +130,13 @@ p {
     font-family: Poppins;
 }
 /* Slider container */
-.slider-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    padding: 20px 0; /* Ensure no top/bottom cutoff */
-}
-
-.slider-wrapper {
-    width: 100%;
-    max-width: 1100px; /* Keep the cards centered */
-    overflow: hidden;
-    position: relative;
-}
-
-.slider-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.6s ease-in-out;
-    width: max-content;
-    align-items: center; /* Center cards vertically */
-}
 
 /* Cards */
-.card2 {
-    width: 300px;
-    flex-shrink: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    min-height: 250px; /* Ensures full visibility */
-    margin: 0 auto; /* Centers the cards */
-}
 
 
 
 
 /* Service Box */
-/* .service-box1 {
-    border-radius: 30px;
-    padding: 20px;
-    border: 2px solid #ddd;
-    width: 100%;
-    background: radial-gradient(ellipse at bottom,
-            #28C0E7 0%,
-            #5CD3F3 30%,
-            #A1E9FA 60%,
-            white 100%);
-}  */
 .service-box1 {
     border-radius: 30px;
     padding: 20px;
@@ -210,51 +179,166 @@ p {
     text-align: center;
     overflow: hidden;
     padding: 20px 0;
+    position: relative;
   }
   
+  .logo-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
   
+  .logo-slider {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+  }
   
   .logo-track {
     display: flex;
     animation: slideLogos 10s linear infinite;
-    width: calc(200%); /* Double width to avoid gap */
+    gap: 40px; /* Adjust spacing between logos */
   }
   
   .logo-box {
     flex: 0 0 auto;
-    width: 150px; /* Adjust logo size */
-    margin: 0 20px; /* Maintain consistent spacing */
+    width: 194px;
   }
   
   .logo-box img {
     width: 100%;
-    height: auto;
+    height: 48px;
   }
   
-  /* Keyframes for Infinite Sliding */
+  /* Infinite scrolling animation */
   @keyframes slideLogos {
     from {
-      transform: translateX(-50);
+      transform: translateX(0);
     }
     to {
-      transform: translateX(-50%); /* Moves by half, looping seamlessly */
+      transform: translateX(-50%);
     }
   }
+  
+  /* Blur effect */
+  .logo-gradient {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 10;
+  }
+  
+  .logo-gradient.left {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+  
+  .logo-gradient.right {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  }
+  
   
 /* Zoom Effect */
 .zoom-effect {    
-  
+    overflow: hidden;
     display: inline-block;
     border-radius: none;
 }
 
-.zoom-effect img {
+.zoom-effect  {
     transition: transform 0.8s ease-in-out;
     
 }
 
-.zoom-effect:hover img {
+.zoom-effect:hover  {
     transform: scale(1.1);
     
 }
 
+.Glimpse-1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.Glimpse-1 img {
+    transition: filter 0.3s ease-in-out;
+}
+
+.Glimpse-1:hover img {
+    filter: blur(8px); /* Apply blur directly to the image */
+}
+
+/* Adding overlay image */
+.Glimpse-1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px; /* Adjust overlay image size */
+    height: 200px;
+    background: url("public/img/Riter.png") no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Glimpse-1:hover::after {
+    opacity: 1; /* Show overlay image after blur */
+}
+
+
+.rotate-circle {
+    width: 200px; /* Adjust as needed */
+    height: 200px;
+    background-image: url("public/img/pitch.png"); /* Set your image */
+    background-size: cover;
+    background-position: top;
+    border-radius: 20%; 
+    transition: transform 0.6s ease-in-out;
+}
+
+.rotate-circle:hover {
+    transform: rotate(180deg); /* Full circle rotation */
+}
+
+
+/* startimage  */
+.startimage {
+    padding: 80px;
+}
+
+@media (max-width: 768px) {
+    .startimage {
+        padding: 30px;
+    }
+}
+
+
+
+/* Fix blur effect at the top and bottom */
+.slick-slide > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Ensure proper spacing */
+  .slick-list {
+    overflow: visible !important;
+  }
+  
+  /* Prevent cards from getting cut off */
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fix the card height and spacing */
+  .card {
+    min-height: 250px; /* Adjust as needed */
+  }
+  
