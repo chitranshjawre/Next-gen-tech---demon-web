@@ -26,12 +26,18 @@ const Hero = () => {
                     {/* Hero Content */}
                     <div className="hero d-flex flex-column justify-content-center align-items-center text-center position-relative px-3">
 
-                        <h1 className="fw-bold heading1 display-4 display-md-3 ">
+                        <h1 className="fw-bold heading1 display-4 display-md-3 " >
                             <i className=''>Let’s Bring Your</i> <br />
-                            <span className="heading text-primary">
-                                <img src="public/img/Ideas to life.png" className="img-fluid" alt="Ideas to Life" />
-                            </span>
+
                         </h1>
+                        <h1 className='heading1' style={{
+                            backgroundImage: "linear-gradient(to right,#0f3c4c, #28C0E7)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                           
+                            fontWeight: "bold",
+                            textAlign: "center",
+                        }}> Ideas to Life</h1>
 
                         <p className="mt-3 lead">
                             With every single one of our clients, we bring forth a deep <br className="d-none d-md-block" />
@@ -45,7 +51,7 @@ const Hero = () => {
                         {/* Right Floating Polygon Image */}
                         <img
                             src="public/img/Polygon hero - left.png"
-                            className="position-absolute bottom-0 end-0 img-fluid d-none d-md-block"
+                            className="position-absolute  bottom-0 end-0 img-fluid d-none d-md-block"
                             alt="Polygon Hero Left"
                         />
                     </div>
@@ -54,14 +60,14 @@ const Hero = () => {
             </section>
 
 
-            
-
-           
-            
 
 
 
-           
+
+
+
+
+
 
 
 

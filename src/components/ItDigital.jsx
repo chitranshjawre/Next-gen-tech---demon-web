@@ -1,9 +1,9 @@
 import React from 'react'
 
 const ItDigital = () => {
-  return (
-    <>
-       <section id="About" title="About">
+    return (
+        <>
+            <section id="About" title="About">
                 <div className="container mt-5">
                     <section>
                         <div className="container mt-5">
@@ -11,7 +11,7 @@ const ItDigital = () => {
 
                                 {/* Left Column - IT Consulting */}
                                 <div className="col-lg-5 col-md-6 col-12 d-flex">
-                                    <div className="service-box1 p-4 shadow  w-100 d-flex flex-column" style={{ backgroundColor: "#abdbe3" }}>
+                                    <div className="service-box1 p-4 shadow  w-100 d-flex flex-column" >
                                         <h2>IT Consulting</h2>
                                         <p>
                                             Est tempora at. Aut quo molestias cupiditate et fugiat. <br />
@@ -31,11 +31,19 @@ const ItDigital = () => {
 
                                                 {/* Progress Bar */}
                                                 <div className="progress mt-3" style={{ height: "3px" }}>
-                                                    <div className="progress-bar bg-primary" style={{ width: "60%" }}></div>
+                                                    <div
+                                                        className="progress-bar"
+                                                        style={{
+                                                            width: "60%",
+                                                            backgroundImage: "linear-gradient(to right, #1C90A2, #28C0E7)", // Gradient background
+                                                            boxShadow: "0px 0px 10px rgba(40, 192, 231, 0.6)", // Shadow effect
+                                                        }}
+                                                    ></div>
                                                 </div>
 
+
                                                 {/* Button */}
-                                                <button className="btn btn-primary w-100 mt-3 d-flex align-items-center justify-content-center gap-2">
+                                                <button className="btn w-100 mt-3 d-flex align-items-center text-white justify-content-center gap-2" style={{ backgroundImage: "linear-gradient(to right, #1C90A2, #28C0E7)" }}>
                                                     <img src="/public/img/star.png" alt="Star Icon" className="img-fluid" style={{ width: "20px", height: "20px" }} />
                                                     <span>Start with AI</span>
                                                 </button>
@@ -47,7 +55,7 @@ const ItDigital = () => {
 
                                 {/* Right Column - Digital Marketing */}
                                 <div className="col-lg-7 col-md-6 col-12 d-flex">
-                                    <div className="service-box1 p-4 shadow  w-100 d-flex flex-column" >
+                                    <div className="service-box2 p-4 shadow  w-100 d-flex flex-column" >
                                         <h2>Digital Marketing</h2>
                                         <p>
                                             Est tempora at. Aut quo molestias cupiditate et fugiat. <br />
@@ -66,8 +74,8 @@ const ItDigital = () => {
                 </div>
             </section>
 
-    </>
-  )
+        </>
+    )
 }
 
 export default ItDigital

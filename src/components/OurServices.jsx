@@ -6,7 +6,7 @@ const OurServices = () => {
        <section className='' id="Service" title="Service">
                 <div className="container-fluid  mt-4">
                     <div className="container   text-center" >
-                        <h1>Our Services</h1>
+                        <h2>Our Services</h2>
                         <p className=' mt-3'>We provide customized solutions that meet our clients' unique needs <br />
                             and help them succeed in an increasingly digital world.</p>
                     </div>
@@ -42,7 +42,7 @@ const OurServices = () => {
                                             Accusantium dicta ut voluptatem. Natus sit in.
                                         </p>
                                     </div>
-                                    <div className="image-container">
+                                    <div className="image-container" >
                                         <img src="public/img/mobile.png" className="img-fluid zoom-effect" alt="Digital Products" />
                                     </div>
                                 </div>

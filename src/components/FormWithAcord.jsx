@@ -10,7 +10,7 @@ const FormWithAcord = () => {
                 <div className="row d-flex align-items-center justify-content-center">
                     {/* Left Side: Text & Form */}
                     <div className="col-lg-6 col-md-12 text-center text-lg-start">
-                        <h3>How we can help you?</h3>
+                        <h2>How we can help you?</h2>
                         <p className="mt-3 mb-4">
                             Follow our newsletter. We will regularly <br /> update our latest
                             project and availability.
@@ -47,86 +47,44 @@ const FormWithAcord = () => {
 
                     {/* Right Side: Accordion */}
                     <div className="col-lg-6 col-md-12 mt-4 mt-lg-0">
-                        <div className="accordion accordion-flush" id="accordionFlushExample">
-                            <div className="accordion-item">
-                                <h2 className="accordion-header">
-                                    <button
-                                        className="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapseOne"
-                                    >
-                                        How do I sign up for the project?
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapseOne"
-                                    className="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample"
-                                >
-                                    <div className="accordion-body">
-                                        Placeholder content for this accordion, which is intended to
-                                        demonstrate the <code>.accordion-flush</code> class. This is
-                                        the first item's accordion body.
-                                    </div>
-                                </div>
-                            </div>
+  <div className="accordion accordion-flush" id="accordionFlushExample">
+    {[
+      { id: "One", question: "How do I sign up for the project?" },
+      { id: "Two", question: "What is the process for getting started?" },
+      { id: "Three", question: "Are there any prerequisites?" },
+    ].map((item, index) => (
+      <div className="accordion-item" key={index}>
+        <h2 className="accordion-header">
+          <button
+            className="accordion-button collapsed d-flex justify-content-between align-items-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target={`#flush-collapse${item.id}`}
+            aria-expanded="false"
+            aria-controls={`flush-collapse${item.id}`}
+            style={{ display: "flex", justifyContent: "space-between", width: "100%" }}
+          >
+            {item.question}
+            <span className="icon" style={{ marginLeft: "auto", transition: "transform 0.3s" }}>
+              <i className="fa-solid fa-plus"></i>
+            </span>
+          </button>
+        </h2>
+        <div
+          id={`flush-collapse${item.id}`}
+          className="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div className="accordion-body">
+            Placeholder content for this accordion, which is intended to demonstrate the
+            <code>.accordion-flush</code> class. This is the {index + 1} item's accordion body.
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
-                            <div className="accordion-item">
-                                <h2 className="accordion-header">
-                                    <button
-                                        className="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseTwo"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapseTwo"
-                                    >
-                                        How do I sign up for the project?
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapseTwo"
-                                    className="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample"
-                                >
-                                    <div className="accordion-body">
-                                        Placeholder content for this accordion, which is intended to
-                                        demonstrate the <code>.accordion-flush</code> class. This is
-                                        the second item's accordion body.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="accordion-item">
-                                <h2 className="accordion-header">
-                                    <button
-                                        className="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseThree"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapseThree"
-                                    >
-                                        How do I sign up for the project?
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapseThree"
-                                    className="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample"
-                                >
-                                    <div className="accordion-body">
-                                        Placeholder content for this accordion, which is intended to
-                                        demonstrate the <code>.accordion-flush</code> class. This is
-                                        the third item's accordion body.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
     </>
